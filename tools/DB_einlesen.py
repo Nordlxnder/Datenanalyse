@@ -62,8 +62,10 @@ class Datenbank:
         # self.db_zuletzt_aktualisiert = []
         self.dateiname_DB = 'Datenbank.pkl'
 
-        self.datenbank_check()
-        self.wkn_und_aktienname_drehen()
+        status = self.datenbank_check()
+
+        if status:
+            self.wkn_und_aktienname_drehen()
 
 
     def datenbank_check(self):
@@ -76,7 +78,7 @@ class Datenbank:
         '''
 
         pfad = arbeitsverzeichnis()
-
+        status = True
         if path.isfile(sep.join([pfad ,"Daten", self.dateiname_DB])):
             print("Die Datenbank ist vorhanden!")
             self.pfad_mit_dateiname = pfad + "/Daten/" + self.dateiname_DB
@@ -90,6 +92,8 @@ class Datenbank:
                 self.datenbank_einlesen()
             else:
                 print("Die Datenbank ist nicht da!")
+                status = False
+        return status
 
     ### Auslesen aus der Datenbank
     def datenbank_einlesen(self):

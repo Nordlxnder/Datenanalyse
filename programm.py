@@ -7,7 +7,7 @@
 ### Standard Skripte ###
 
 from sys import argv
-from os import path, chdir
+from os import path, chdir, getcwd
 
 ### eigene Skripts ###
 from tools.DB_einlesen import Datenbank
@@ -16,9 +16,14 @@ from tools.download_DB import herunterladen
 from tools.x_y_diagramm import AktienGraph
 
 
-# Pfad des Arbeitsverzeichnisses setzen
+# Programmpfad als Arbeitsverzeichnisses setzen
 av = path.dirname(argv[0])
-chdir(av)
+
+if len(av) > 0:
+    chdir(av)
+    pfad_av = getcwd()
+else:
+    pfad_av = getcwd()
 
 meineDB = Datenbank()
 
@@ -67,7 +72,7 @@ def check_argumente(argumente):
 
         if e == "download":
             print("Die Datenbank wird heruntergeladen!\n\n Bitte warten Sie!!\n\n")
-            herunterladen()
+            herunterladen(pfad_av)
             flag = True
 
         if e == "suche":
@@ -79,7 +84,7 @@ def check_argumente(argumente):
                 print(name,":\t", wkn)
             print("\n")
             print("Zum Anzeigen des Verlaufs "
-                    "programm.py DE000A2G8XX3 oder programm.py liste eingeben\n\n")
+                    "./programm.py DE000A2G8XX3 oder ./programm.py liste eingeben\n\n")
             flag = True
 
         if e == "diagramm":

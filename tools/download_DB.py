@@ -17,19 +17,17 @@
 import sys
 from wget import download
 from os import chdir, path, sep
-from os import getcwd as arbeitsverzeichnis
 from os import rename
 
 
-def herunterladen():
+def herunterladen(pfad_av):
 
-    # Pfad des Arbeitsverzeichnisses setzen
-    av = path.dirname(sys.argv[0])
-    chdir(av)
+    # # Pfad des Arbeitsverzeichnisses setzen
+    chdir(pfad_av)
 
     dateiname = 'Datenbank.pkl'
 
-    pfad = verzeichnis_check()
+    pfad = verzeichnis_check(pfad_av)
 
     datei_check(pfad, dateiname)
 
@@ -44,16 +42,17 @@ def herunterladen():
     return "Die Datenbank wurde \nerfolgreich heruntergeladen \n"
 
 
-def verzeichnis_check():
+def verzeichnis_check(pfad_av):
 
     if not path.isdir("Daten"):
         # Ins übergeordnete Verzeichnis wechseln
         chdir("..")
 
     # neuen Pfad festlegen
-    pfad = sep.join([arbeitsverzeichnis(), "Daten"])
+    pfad = sep.join([pfad_av, "Daten"])
 
     # neuen Pfad setzen
+
     chdir(pfad)
 
     return pfad
