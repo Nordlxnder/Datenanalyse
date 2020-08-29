@@ -1,0 +1,6 @@
+*.py~
+.idea
+.idea/w*
+.git
+/Daten/Datenbank.pkl
+tools/__p*
