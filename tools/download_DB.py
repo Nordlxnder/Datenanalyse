@@ -16,7 +16,7 @@
 
 import sys
 from wget import download
-from os import chdir, path, sep
+from os import chdir, path, sep, mkdir
 from os import rename
 
 
@@ -44,15 +44,17 @@ def herunterladen(pfad_av):
 
 def verzeichnis_check(pfad_av):
 
+    # neuen Pfad setzen
+    chdir(pfad_av)
+
     if not path.isdir("Daten"):
         # Ins übergeordnete Verzeichnis wechseln
-        chdir("..")
+        mkdir("Daten")
 
     # neuen Pfad festlegen
     pfad = sep.join([pfad_av, "Daten"])
 
     # neuen Pfad setzen
-
     chdir(pfad)
 
     return pfad
