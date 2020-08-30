@@ -2,5 +2,5 @@
 .idea
 .idea/w*
 .git
-/Daten/D*
+Daten/D*
 tools/__p*
