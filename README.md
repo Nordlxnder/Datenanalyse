@@ -1,30 +1,28 @@
-# Blutdruckmessungen
+# Datenanalyse
 
-Erfassung der Messwerte einer Blutdruckmessung
+Analyse von Aktienwerten
 
 
 Systemvoraussetzung:
 
 	Python 3.8
-	python-kivy 1.11.1-2
 	matplotlib
+	wget
 
 OS: 
 
 	Linux
+	Windows 10
 
 Beschreibung:
 
-	Die Software bietet eine Oberfläche zur Eingabe der Messwerte
-	eines Blutdruck Messgerätes
-	
-	Es können mehrere Messungen eingetragen werden können
-	Alle Messdaten sowie Datum, Zeit und Kommentar werden
-	In der Datei messwerte.txt im Ordner Daten gespeichert
-
-	Die Messwerte können in einem Diagramm dargestellt werden,
-	wobei die Messwerte eines Tages dann als gemittelter Wert
-	angezeit wird.
-	
-	Falls noch keine Messdaten erfasst wurden, wird beim Aufruf
-	eines Diagramms ein Beispieldatensatz angezeigt
+	Die Software bietet die Möglichkeit die Werte 
+	aus der Datenbank zu analysisieren und in 
+    einem Diagramm darzustellen.
+    
+    Die Steuerung erfolgt durch die Übergabe von Parametern
+    
+    z.B.: python programm.py download
+            python programm.py DE000A1EWWW0
+            python programm.py help
+    
