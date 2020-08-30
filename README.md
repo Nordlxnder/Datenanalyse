@@ -6,8 +6,8 @@ Analyse von Aktienwerten
 Systemvoraussetzung:
 
 	Python 3.8
-	matplotlib
-	wget
+	matplotlib 3.3.1    pip installmatplotlib
+	wget 3.2            pip install wget
 
 OS: 
 
