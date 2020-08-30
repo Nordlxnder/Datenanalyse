@@ -23,6 +23,6 @@ Beschreibung:
     Die Steuerung erfolgt durch die Übergabe von Parametern
     
     z.B.: python programm.py download
-            python programm.py DE000A1EWWW0
-            python programm.py help
+          python programm.py DE000A1EWWW0
+          python programm.py help
     
